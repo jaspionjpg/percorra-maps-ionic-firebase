@@ -1,0 +1,49 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Novo percurso</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addNote()"><ion-icon name="add"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>  
+  <ion-list reorder="true" (ionItemReorder)="reorderItems($event)">
+      <ion-item-sliding *ngFor="let ponto of pontos; let i = index;">
+        
+        <ion-item>
+            {{ ponto.local }}
+        </ion-item>
+
+        <ion-item-options side="left">
+          <button ion-button icon-only (click)="editNote(ponto)" color="light">
+              <ion-icon name="paper"></ion-icon>
+          </button>
+          <button ion-button icon-only (click)="deleteNote(ponto)" color="danger">
+              <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-item-options>
+
+        <ion-item-options side="right">
+          <button ion-button icon-only (click)="duplicateNote(ponto)">
+              <ion-icon name="paper"></ion-icon>
+          </button>
+        </ion-item-options>
+
+      </ion-item-sliding>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-row justify-content-around class="padding">
+    <ion-col col-4>
+      <button ion-button full col-12 (click)="salvar()">Salvar</button>
+    </ion-col>
+    <ion-col col-4>
+      <button ion-button full col-12 (click)="ir()">Salvar e ir</button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

@@ -1,0 +1,39 @@
+<ion-content>
+  <ion-fab right bottom>
+    <button ion-fab (click)="centerUser()">
+      <ion-icon name="pin"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <ion-fab left bottom>
+    <button ion-fab menuToggle="left">
+      <ion-icon name="ios-compass"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <ion-fab left top>
+    <button ion-fab (click)="startPercurso()">
+      <ion-icon name="ios-compass"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <div id="floating-panel">
+    <ion-fab right top>
+      <button ion-fab color="danger"(click)="calculateRoute()">
+        ir
+      </button>
+    </ion-fab>
+
+    <ion-item>
+      <ion-label>De onde?</ion-label>
+      <ion-input type="text" [(ngModel)]="start"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Para onde?</ion-label>
+      <ion-input type="text" [(ngModel)]="end"></ion-input>
+    </ion-item>
+    
+  </div>
+  <div #map id="map"></div>
+</ion-content>

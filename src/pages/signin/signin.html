@@ -1,0 +1,39 @@
+<ion-header>
+  
+    <ion-navbar>
+      <ion-title>Login</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+  
+    <h1 text-center>
+      <ion-icon class="auth-icon" name="chatboxes" color="primary"></ion-icon>
+    </h1>
+  
+    <form [formGroup]="signinForm" (ngSubmit)="onSubmit(); $event.preventDefault()">
+  
+      <ion-item>
+        <ion-icon name="mail" item-left color="primary"></ion-icon>
+        <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-icon name="lock" item-left color="primary"></ion-icon>
+        <ion-input type="password" placeholder="Senha" formControlName="password"></ion-input>
+      </ion-item>
+    
+      <br>
+      <button ion-button full type="submit" [disabled]="signinForm.invalid">Logar-se</button>
+  
+    </form>
+  
+    <button ion-button full clear textx-center (click)="onSignup()">Cadastrar-se</button>
+    <button ion-button icon-left block clear (click)="loginWithGoogle()">
+        <ion-icon name="logo-google"></ion-icon>
+        Log in with Google
+      </button>
+  </ion-content>
+    

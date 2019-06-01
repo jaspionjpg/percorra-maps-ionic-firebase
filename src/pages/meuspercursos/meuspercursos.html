@@ -1,0 +1,25 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Meus percursos</ion-title>    
+    <ion-buttons end>
+      <button ion-button>Adicionar novo</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-item-group *ngFor="let percurso of currentPercursos;">
+    <ion-item-divider color="light" (click)="abrir(percurso)">{{percurso.nome}}</ion-item-divider>
+    <div *ngIf="percurso.aberto">
+      <button ion-item (click)="ir(percurso)">
+        <ion-item  *ngFor="let ponto of percurso.pontos;">
+          {{ponto.local}}
+        </ion-item>
+      </button>
+    </div>
+  </ion-item-group>
+</ion-content>

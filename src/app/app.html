@@ -1,0 +1,60 @@
+<ion-menu [content]="content" id="user-menu">
+    <ion-header>
+      <div class="menu-header">
+        <ion-row style="align-items:center;">
+          <ion-col col-6>
+              <img class="user-avatar round" style="height:90px;max-width:90px;" src="assets/imgs/girl-avatar.png"/>
+          </ion-col>
+          <ion-col col-3>
+              <img src="assets/icon/icon-email.svg" />
+
+          </ion-col>
+          <ion-col col-3>
+            <img src="assets/icon/icon-calendar.svg" />
+
+          </ion-col>
+        </ion-row>
+        <p class="name">{{ currentUser?.username }}</p>
+        <p class="e-mail">{{ currentUser?.email }}</p>
+      </div>
+    </ion-header>
+
+    <ion-content>
+      <ion-list no-lines>
+        <button ion-item  (click)="openPageNovoPercurso()">
+          <ion-icon name="ios-navigate" item-start  style="color:#488aff"></ion-icon>
+          <span  style="color:#488aff">Novo percurso</span>
+        </button>        
+        <button ion-item  (click)="openPageMeusPercursos()">
+          <ion-icon name="ios-map" item-start style="color:green"></ion-icon>
+          <span style="color:green">Meus Percursos</span>
+        </button>
+        <button ion-item>
+          <ion-icon name="md-calendar" item-start  style="color:#663399"></ion-icon>
+          <span style="color:#663399">Agenda</span>
+        </button>
+        <button ion-item>
+          <ion-icon name="ios-paper" item-start style="color:#FF6700" ></ion-icon>
+          <span style="color:#FF6700">Historico</span>
+        </button>
+        <ion-item *ngFor="let percurso of currentPercursos; let i = index;">
+          percurso: {{ percurso.nome }}
+        </ion-item>
+      </ion-list>
+    </ion-content>
+      
+    <ion-footer>
+      <ion-list>
+        <button ion-item>
+          <ion-icon name="md-settings" item-start></ion-icon>
+          <span>Configurações</span>
+        </button>
+        <button ion-item (click)="onLogout()">
+          <ion-icon name="md-power" item-start style="color:red"></ion-icon>
+          <span style="color:red">Sair</span>
+        </button>
+      </ion-list>
+    </ion-footer>
+  </ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
