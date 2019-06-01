@@ -1,7 +1,7 @@
 # percorra-maps-ionic-firebase
 Projeto com objetivo de usar google api para formar rotas entre varias localidades, com autentificação com firebase
 
-### Projeto pode ser acessado pelo link: (https://percorra.richardmartins.com/)[https://percorra.richardmartins.com/]
+### Projeto pode ser acessado pelo link: [https://percorra.richardmartins.com/](https://percorra.richardmartins.com/)
 
 ### Como rodar
 
